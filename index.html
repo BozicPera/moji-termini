@@ -41,34 +41,30 @@
     </style>
   </head>
   <body class="font-sans text-dark antialiased">
-    <header class="border-b border-slate-200/80 bg-white">
+    <header class="border-b border-slate-300/80 bg-white">
       <div class="mx-auto flex w-full max-w-[1120px] items-center justify-between px-5 py-5 md:px-8 lg:px-10">
         <div class="text-lg font-semibold tracking-tight text-primary">ClinicFlow</div>
-        <a
-          href="#results"
-          class="inline-flex h-[40px] items-center rounded-lg px-3 text-sm font-medium text-slate-500"
-          >Clinic Results</a
-        >
+        <a href="#results" class="inline-flex h-[40px] items-center rounded-lg px-3 text-sm font-medium text-slate-500">Clinic Results</a>
       </div>
     </header>
 
     <main>
-      <section class="mx-auto w-full max-w-[1120px] px-5 pb-24 pt-24 md:px-8 md:pb-24 md:pt-32 lg:px-10 lg:pt-36">
-        <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,640px)_minmax(0,360px)] lg:gap-16">
-          <div class="max-w-[640px]">
-            <p class="mb-6 inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-secondary">
+      <section class="mx-auto w-full max-w-[1120px] px-5 pb-32 pt-24 md:px-8 md:pb-36 md:pt-32 lg:px-10 lg:pb-40 lg:pt-40">
+        <div class="grid items-start gap-12 lg:grid-cols-[minmax(0,620px)_minmax(0,400px)] lg:gap-20">
+          <div class="max-w-[620px]">
+            <p class="mb-7 inline-flex rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-secondary">
               Built for Serbian private clinics
             </p>
-            <h1 class="text-[42px] font-bold leading-[1.08] tracking-[-0.02em] text-dark md:text-[56px]">
+            <h1 class="text-[44px] font-bold leading-[1.04] tracking-[-0.025em] text-dark md:text-[60px]">
               Fewer no-shows. Less admin. Better continuity of care.
             </h1>
-            <p class="mt-6 max-w-[560px] text-[18px] leading-[1.5] text-slate-700 md:text-[20px]">
+            <p class="mt-8 max-w-[560px] text-[18px] leading-[1.6] text-slate-700 md:text-[20px]">
               Your team works from one source of truth. Patients always know the next step.
             </p>
-            <div class="mt-10 flex flex-wrap items-center gap-3">
+            <div class="mt-12 flex flex-wrap items-center gap-4">
               <a
                 href="#demo"
-                class="inline-flex h-[54px] items-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-card"
+                class="inline-flex h-[56px] items-center rounded-xl bg-primary px-10 text-base font-bold text-white shadow-card ring-1 ring-primary/20"
                 >Schedule a 20-Minute Demo</a
               >
               <a
@@ -77,18 +73,18 @@
                 >View Clinic Results</a
               >
             </div>
-            <p class="mt-8 text-sm text-slate-600">Trusted by private clinics in Belgrade, Novi Sad, and Niš.</p>
+            <p class="mt-9 text-sm font-medium text-slate-600">Trusted by private clinics in Belgrade, Novi Sad, and Niš.</p>
           </div>
 
-          <aside class="w-full max-w-[360px] rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
-            <p class="text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">Trust Snapshot</p>
-            <div class="mt-5 space-y-4">
-              <div class="rounded-xl border border-slate-200 bg-light px-4 py-3">
-                <p class="text-xs font-semibold text-slate-500">System uptime</p>
-                <p class="mt-1 text-2xl font-bold leading-none text-dark">99.95%</p>
-                <p class="mt-1 text-sm text-slate-600">Last 12 months</p>
-              </div>
-              <div class="rounded-xl border border-slate-200 bg-light px-4 py-3">
+          <aside class="w-full max-w-[400px] rounded-2xl border border-slate-300 bg-white p-8 shadow-card ring-1 ring-slate-100">
+            <p class="text-sm font-semibold text-slate-700">Operational proof</p>
+            <div class="mt-5 rounded-xl border border-slate-300 bg-light p-6">
+              <p class="text-xs font-semibold tracking-wide text-slate-500">Operational reliability</p>
+              <p class="mt-2 text-[36px] font-bold leading-none text-dark">99.95% uptime</p>
+              <p class="mt-2 text-sm text-slate-600">Verified over the last 12 months</p>
+            </div>
+            <div class="mt-5 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-xl border border-slate-200 bg-light p-4">
                 <p class="text-sm font-semibold text-dark">Security controls</p>
                 <ul class="mt-2 space-y-1 text-sm text-slate-700">
                   <li>Role-based access</li>
@@ -96,116 +92,136 @@
                   <li>Encrypted records</li>
                 </ul>
               </div>
-              <div class="rounded-xl border border-slate-200 bg-light px-4 py-3">
+              <div class="rounded-xl border border-slate-200 bg-light p-4">
                 <p class="text-sm font-semibold text-dark">Live clinics</p>
-                <p class="mt-1 text-sm text-slate-700">Belgrade · Novi Sad · Niš</p>
+                <p class="mt-2 text-sm text-slate-700">Belgrade</p>
+                <p class="text-sm text-slate-700">Novi Sad</p>
+                <p class="text-sm text-slate-700">Niš</p>
               </div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="border-y border-slate-200 bg-white py-16 md:py-20 lg:py-24">
+      <section class="border-y border-slate-300 bg-slate-50 py-24 md:py-28 lg:py-32">
         <div class="mx-auto w-full max-w-[1120px] px-5 md:px-8 lg:px-10">
-          <div class="grid gap-6 lg:grid-cols-12">
-            <article class="rounded-2xl border border-slate-200 bg-light p-8 shadow-card lg:col-span-7">
-              <h2 class="text-2xl font-bold leading-tight">Trust</h2>
-              <p class="mt-2 text-sm font-medium text-slate-600">Foundation for adoption</p>
-              <ul class="mt-6 space-y-3 text-slate-700">
+          <div class="grid gap-7 lg:grid-cols-12">
+            <article class="rounded-2xl border border-slate-300 bg-white p-11 lg:col-span-7">
+              <h2 class="text-[32px] font-bold leading-[1.1] tracking-tight text-dark">Trust</h2>
+              <p class="mt-3 text-base font-medium text-slate-700">Foundation for adoption</p>
+              <ul class="mt-7 space-y-3 text-slate-700">
                 <li>Data-protection standards</li>
                 <li>Hosting and access-control details</li>
                 <li>Local clinic references</li>
               </ul>
             </article>
 
-            <div class="space-y-6 lg:col-span-5">
-              <article class="rounded-2xl border border-slate-200 bg-light p-6 shadow-card">
-                <h2 class="text-xl font-bold leading-tight">Value</h2>
-                <ul class="mt-4 space-y-2 text-slate-700">
+            <div class="space-y-7 lg:col-span-5">
+              <article class="rounded-2xl border border-slate-200 bg-white p-8">
+                <h2 class="text-[22px] font-bold leading-[1.2]">Value</h2>
+                <ul class="mt-5 space-y-2 text-slate-700">
                   <li>Fewer missed visits</li>
                   <li>Lower admin load</li>
                   <li>Clear patient follow-through</li>
                 </ul>
               </article>
 
-              <article class="rounded-2xl border border-slate-200 bg-light p-6 shadow-card">
-                <h2 class="text-xl font-bold leading-tight">Workflow</h2>
-                <p class="mt-4 text-slate-700">Book → Confirm → Record visit → Send follow-up</p>
+              <article class="rounded-2xl border border-slate-200 bg-white p-8">
+                <h2 class="text-[22px] font-bold leading-[1.2]">Workflow</h2>
+                <p class="mt-5 text-slate-700">Book → Confirm → Record visit → Send follow-up</p>
               </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="results" class="py-16 md:py-20 lg:py-24">
+      <section id="results" class="bg-white py-24 md:py-28 lg:py-32">
         <div class="mx-auto w-full max-w-[1120px] px-5 md:px-8 lg:px-10">
-          <h2 class="text-[32px] font-bold leading-[1.15] tracking-tight">Measured outcomes</h2>
-          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <h2 class="max-w-[18ch] text-[34px] font-bold leading-[1.12] tracking-tight text-dark">Measured outcomes</h2>
+          <div class="mt-10 grid gap-5 lg:grid-cols-12">
+            <article class="rounded-2xl border border-slate-300 bg-slate-50 p-11 shadow-card lg:col-span-6">
               <p class="text-sm font-semibold text-slate-600">No-show reduction</p>
-              <p class="mt-2 text-3xl font-bold text-success">-28%</p>
+              <p class="mt-3 text-[56px] font-bold leading-none text-success">-28%</p>
+              <p class="mt-4 max-w-[30ch] text-sm leading-[1.55] text-slate-600">Largest impact area after rollout across participating clinics.</p>
             </article>
-            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
-              <p class="text-sm font-semibold text-slate-600">Intake speed</p>
-              <p class="mt-2 text-3xl font-bold text-primary">+34%</p>
-            </article>
-            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
-              <p class="text-sm font-semibold text-slate-600">Response time</p>
-              <p class="mt-2 text-3xl font-bold text-primary">-41%</p>
-            </article>
-            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
-              <p class="text-sm font-semibold text-slate-600">Patient return rate</p>
-              <p class="mt-2 text-3xl font-bold text-success">+19%</p>
-            </article>
+            <div class="grid gap-5 sm:grid-cols-2 lg:col-span-6">
+              <article class="rounded-2xl border border-slate-200 bg-white p-8 ring-1 ring-slate-100">
+                <p class="text-sm font-semibold text-slate-600">Intake speed</p>
+                <p class="mt-2 text-3xl font-bold text-primary">+34%</p>
+              </article>
+              <article class="rounded-2xl border border-slate-200 bg-white p-8 ring-1 ring-slate-100">
+                <p class="text-sm font-semibold text-slate-600">Response time</p>
+                <p class="mt-2 text-3xl font-bold text-primary">-41%</p>
+              </article>
+              <article class="rounded-2xl border border-slate-200 bg-white p-7 ring-1 ring-slate-100 sm:col-span-2">
+                <p class="text-sm font-semibold text-slate-600">Patient return rate</p>
+                <p class="mt-2 text-3xl font-bold text-success">+19%</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="demo" class="border-t border-slate-200 bg-white py-16 md:py-20 lg:py-24">
+      <section id="demo" class="border-t border-slate-300 bg-slate-50 py-32 md:py-36 lg:py-40">
         <div class="mx-auto w-full max-w-[1120px] px-5 md:px-8 lg:px-10">
-          <div class="max-w-[720px] rounded-2xl border border-slate-200 bg-light p-6 md:p-8">
-            <h2 class="text-[32px] font-bold leading-[1.15] tracking-tight">Schedule a 20-minute walkthrough</h2>
-            <p class="mt-4 text-lg leading-[1.5] text-slate-700">No obligation. Clear fit assessment for your clinic.</p>
-            <form class="mt-8 grid gap-4 sm:grid-cols-2">
-              <label class="text-sm font-semibold text-slate-700">
-                Name
-                <input
-                  type="text"
-                  class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none"
-                  placeholder="Dr. Marko Petrović"
-                />
-              </label>
-              <label class="text-sm font-semibold text-slate-700">
-                Clinic
-                <input
-                  type="text"
-                  class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none"
-                  placeholder="BelMedic"
-                />
-              </label>
-              <label class="text-sm font-semibold text-slate-700">
-                Role
-                <input
-                  type="text"
-                  class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none"
-                  placeholder="Owner"
-                />
-              </label>
-              <label class="text-sm font-semibold text-slate-700">
-                Contact
-                <input
-                  type="email"
-                  class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none"
-                  placeholder="name@clinic.rs"
-                />
-              </label>
-              <button
-                type="button"
-                class="sm:col-span-2 inline-flex h-[54px] items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-card"
-              >
-                Schedule a 20-Minute Demo
-              </button>
-            </form>
+          <div class="grid gap-10 lg:grid-cols-12 lg:gap-14">
+            <div class="lg:col-span-5">
+              <h2 class="text-[36px] font-bold leading-[1.08] tracking-tight md:text-[44px]">Book a focused demo for your clinic team</h2>
+              <p class="mt-6 max-w-[44ch] text-lg leading-[1.6] text-slate-700">
+                In 20 minutes, we map your current workflow and show exactly where no-shows and admin delays can be reduced.
+              </p>
+              <ul class="mt-10 space-y-4 text-sm text-slate-700 md:text-base">
+                <li class="flex items-start gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-primary"></span><span>Live walkthrough with a clinic operations specialist</span></li>
+                <li class="flex items-start gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-primary"></span><span>Benchmarks from private clinics in Belgrade, Novi Sad, and Niš</span></li>
+                <li class="flex items-start gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-primary"></span><span>Clear implementation scope and timeline before any commitment</span></li>
+              </ul>
+            </div>
+
+            <div class="lg:col-span-7">
+              <div class="rounded-2xl border border-slate-300 bg-white p-8 md:p-10 lg:p-11 shadow-card">
+                <form class="grid gap-6 sm:grid-cols-2">
+                  <label class="text-sm font-medium text-slate-700">
+                    Name
+                    <input
+                      type="text"
+                      class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="Dr. Marko Petrović"
+                    />
+                  </label>
+                  <label class="text-sm font-medium text-slate-700">
+                    Clinic
+                    <input
+                      type="text"
+                      class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="BelMedic"
+                    />
+                  </label>
+                  <label class="text-sm font-medium text-slate-700">
+                    Role
+                    <input
+                      type="text"
+                      class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="Owner"
+                    />
+                  </label>
+                  <label class="text-sm font-medium text-slate-700">
+                    Contact
+                    <input
+                      type="email"
+                      class="mt-2 h-[52px] w-full rounded-xl border border-slate-300 bg-white px-4 text-base text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="name@clinic.rs"
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    class="sm:col-span-2 mt-4 inline-flex h-[60px] items-center justify-center rounded-xl bg-primary px-12 text-base font-bold text-white shadow-card ring-1 ring-primary/30"
+                  >
+                    Schedule a 20-Minute Demo
+                  </button>
+                </form>
+                <p class="mt-5 text-sm text-slate-600">No obligation. You leave with a clear fit assessment.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
