@@ -1,0 +1,51 @@
+<!--
+    ALTERNATIVNA VERZIJA SA FORMSUBMIT.CO
+    Koristite ovu verziju ako PHP mail() ne radi
+
+    SETUP KORACI:
+    1. Zamenite "vas-email@domen.rs" sa pravim emailom
+    2. Posle prvog submita, dobićete email za verifikaciju
+    3. Kliknite link u emailu da aktivirate
+    4. Sve poruke će stizati na vaš email!
+-->
+
+<!-- Zamenite postojeći <form> tag u index.html sa ovim: -->
+
+<form class="contact-form" action="https://formsubmit.co/vas-email@domen.rs" method="POST">
+    <!-- FormSubmit Configuration (hidden fields) -->
+    <input type="hidden" name="_subject" value="Nova poruka sa Moji Termini sajta">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <!-- Optional: Redirect after success -->
+    <!-- <input type="hidden" name="_next" value="https://vasadomena.rs/hvala.html"> -->
+
+    <!-- Form Fields (ostaje isto) -->
+    <div class="form-group">
+        <label for="name">Ime i prezime *</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email adresa *</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Telefon</label>
+        <input type="tel" id="phone" name="Telefon">
+    </div>
+    <div class="form-group">
+        <label for="clinic">Naziv ordinacije</label>
+        <input type="text" id="clinic" name="Ordinacija">
+    </div>
+    <div class="form-group">
+        <label for="message">Poruka *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Pošalji poruku</button>
+</form>
+
+<!--
+    NAPOMENA: Sa FormSubmit, JavaScript submit handler se NE koristi!
+    FormSubmit automatski šalje email i redirectuje korisnika.
+-->
