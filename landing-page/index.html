@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moji Termini - Sistem za zakazivanje termina za male ordinacije u Srbiji. Automatski SMS podsetnici, vizuelni kalendar, evidencija pacijenata. Smanjite propuštene termine za 30%.">
+    <meta name="keywords" content="zakazivanje termina, ordinacija, zubar, fizioterapeut, SMS podsetnici, evidencija pacijenata">
+    <title>Moji Termini - Sistem za zakazivanje termina za ordinacije</title>
+    <link rel="canonical" href="https://mojitermini.rs/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mojitermini.rs/">
+    <meta property="og:title" content="Moji Termini - Sistem za zakazivanje termina za ordinacije">
+    <meta property="og:description" content="Organizujte termine vaše ordinacije za 5 minuta. Automatski SMS podsetnici, vizuelni kalendar, bez zaboravljenih termina. Besplatan probni period 30 dana.">
+    <meta property="og:image" content="https://mojitermini.rs/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mojitermini.rs/">
+    <meta name="twitter:title" content="Moji Termini - Sistem za zakazivanje termina za ordinacije">
+    <meta name="twitter:description" content="Organizujte termine vaše ordinacije za 5 minuta. Automatski SMS podsetnici, vizuelni kalendar, bez zaboravljenih termina.">
+    <meta name="twitter:image" content="https://mojitermini.rs/images/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233B82F6'/><path d='M16 8V24M8 16H24' stroke='white' stroke-width='3' stroke-linecap='round'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Moji Termini",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "2500",
+        "priceCurrency": "RSD",
+        "priceValidUntil": "2026-12-31"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "3"
+      },
+      "description": "Sistem za zakazivanje termina za male ordinacije u Srbiji. Automatski SMS podsetnici, vizuelni kalendar, evidencija pacijenata."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Moji Termini",
+      "url": "https://mojitermini.rs",
+      "logo": "https://mojitermini.rs/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+381-11-123-4567",
+        "contactType": "Customer Service",
+        "email": "info@mojitermini.rs",
+        "availableLanguage": "Serbian"
+      },
+      "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Da li je komplikovano za korišćenje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne! Moji Termini je dizajniran da bude jednostavan i intuitivan. Većina korisnika nauči da ga koristi za 10-15 minuta. Dodatno, nudimo besplatnu obuku za vas i vaš tim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako funkcionišu SMS podsetnici?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sistem automatski šalje SMS poruku pacijentu 24 sata pre zakazanog termina. Poruka sadrži datum, vreme, i naziv ordinacije. Vi ne morate ništa da radite - sve je automatski."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li da otkažem pretplatu bilo kada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da, u bilo kom trenutku. Nema ugovora, nema obaveza. Platite mesečno i otkažite kada želite. Pre otkazivanja, eksportujemo sve vaše podatke (pacijenti, termini) u Excel format."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Pređi na glavni sadržaj</a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Moji Termini logo">
+                        <rect width="32" height="32" rx="8" fill="#3B82F6"/>
+                        <path d="M16 8V24M8 16H24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-text">Moji Termini</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#mogucnosti">Mogućnosti</a></li>
+                    <li><a href="#kako-funkcionise">Kako funkcioniše</a></li>
+                    <li><a href="#cenovnik">Cenovnik</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#kontakt" class="btn-nav">Kontakt</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Meni" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main-content">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="badge">Novo u Srbiji</span>
+                    <h1>Organizujte termine vaše ordinacije za <span class="highlight">5 minuta</span></h1>
+                    <p class="hero-description">
+                        Jednostavan sistem za zakazivanje termina sa automatskim SMS podsetnicima.
+                        Zaboravite na papirne kalendare, duple rezervacije i zaboravljene termine.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#kontakt" class="btn btn-primary btn-lg">
+                            <span class="btn-main-text">Započnite besplatno</span>
+                            <span class="btn-sub-text">30 dana, bez kartice</span>
+                        </a>
+                        <a href="#kako-funkcionise" class="btn btn-secondary btn-lg">Pogledajte kako radi</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Ordinacija koristi</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2,500+</span>
+                            <span class="stat-label">Zakazanih termina</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30%</span>
+                            <span class="stat-label">Manje propuštenih termina</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="mockup-container">
+                        <div class="mockup-screen">
+                            <div class="calendar-mockup">
+                                <div class="calendar-header">
+                                    <div class="calendar-date">Ponedeljak, 5. Maj 2026</div>
+                                    <div class="calendar-controls">
+                                        <button class="btn-icon">‹</button>
+                                        <button class="btn-icon">›</button>
+                                    </div>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="time-slot empty">09:00</div>
+                                    <div class="time-slot empty">09:30</div>
+                                    <div class="time-slot booked">
+                                        <span class="slot-time">10:00</span>
+                                        <span class="slot-patient">Marko Marković</span>
+                                        <span class="slot-service">Pregled</span>
+                                    </div>
+                                    <div class="time-slot empty">10:30</div>
+                                    <div class="time-slot booked">
+                                        <span class="slot-time">11:00</span>
+                                        <span class="slot-patient">Ana Anić</span>
+                                        <span class="slot-service">Čišćenje</span>
+                                    </div>
+                                    <div class="time-slot empty">11:30</div>
+                                    <div class="time-slot empty">12:00</div>
+                                    <div class="time-slot booked">
+                                        <span class="slot-time">12:30</span>
+                                        <span class="slot-patient">Petar Petrović</span>
+                                        <span class="slot-service">Kontrola</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mockup-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Problemi malih ordinacija</h2>
+                <p>Svakodnevni izazovi sa kojima se suočavate</p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">❌</div>
+                    <h3>Pacijenti zaborave termine</h3>
+                    <p>Bez podsetnika, 20-30% pacijenata ne dolazi na zakazane termine</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📞</div>
+                    <h3>Konstanto zvono telefona</h3>
+                    <p>Prekinut rad tokom pregleda zbog poziva za zakazivanje</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📖</div>
+                    <h3>Haotičan papirni kalendar</h3>
+                    <p>Teško praćenje, izmene, i rizik od duplih rezervacija</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⏱️</div>
+                    <h3>Gubljenje vremena</h3>
+                    <p>Ručno zakazivanje traje dugo i sklono je greškama</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="mogucnosti">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Sve što vam treba na jednom mestu</h2>
+                <p>Jednostavan, moćan sistem kreiran za male ordinacije</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Vizuelni kalendar</h3>
+                    <p>Pregledajte sve termine na dnevnom, nedeljnom ili mesečnom nivou. Zakazite termin u 3 klika.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Automatski SMS podsetnici</h3>
+                    <p>Pacijenti dobijaju SMS 24 sata pre termina. Smanjite broj propuštenih termina za 30%.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Evidencija pacijenata</h3>
+                    <p>Čuvajte podatke o pacijentima (ime, telefon, email) sa brzom pretragom.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Brzo zakazivanje</h3>
+                    <p>Zakažite termin za manje od 30 sekundi. Bez komplikovanih formi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Više korisnika</h3>
+                    <p>Svaki član tima ima svoj nalog. Pratite ko je šta zakazao.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Statistike i izveštaji</h3>
+                    <p>Pratite zauzetost ordinacije, broj termina, i trend propuštenih termina.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Prilagodljivo radno vreme</h3>
+                    <p>Definišite radno vreme i trajanje termina po vašim potrebama.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Tipovi usluga</h3>
+                    <p>Kreirajte kategorije (pregled, čišćenje, tretman) sa različitim bojama u kalendaru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="kako-funkcionise">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Kako funkcioniše</h2>
+                <p>Započnite za manje od 15 minuta</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Napravite nalog</h3>
+                        <p>Unesite osnovne podatke o ordinaciji (ime, adresa, radno vreme). Bez instalacije softvera.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Dodajte pacijente i termine</h3>
+                        <p>Unesite postojeće pacijente ili ih dodajte direktno prilikom zakazivanja novog termina.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Sistem radi za vas</h3>
+                        <p>Automatski šalje SMS podsetnike 24 sata pre termina. Vi samo pratite kalendar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Šta kažu naši korisnici</h2>
+                <p>Ordinacije širom Srbije već koriste Moji Termini</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Pre smo imali ogroman problem sa pacijentima koji ne dolaze. Od kada koristimo Moji Termini i automatske SMS podsetnike, broj propuštenih termina je opao za 40%."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MP</div>
+                        <div>
+                            <div class="author-name">Dr. Milan Petrović</div>
+                            <div class="author-role">Stomatološka ordinacija, Beograd</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Konačno sam se rešila papirnog kalendara! Sada mogu da vidim sve termine na telefonu, a pacijenti dobijaju automatske podsetnike. Preporučujem svima."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AJ</div>
+                        <div>
+                            <div class="author-name">Ana Jovanović</div>
+                            <div class="author-role">Fizioterapeutska ordinacija, Novi Sad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Jednostavan sistem koji je naša recepcija naučila da koristi za 10 minuta. Zakazivanje termina je sada brzo, a duple rezervacije su prošlost."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DS</div>
+                        <div>
+                            <div class="author-name">Dr. Dušan Simić</div>
+                            <div class="author-role">Opšta ordinacija, Niš</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="cenovnik">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Jednostavan cenovnik</h2>
+                <p>Bez skrivenih troškova. Otkažite bilo kada.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-badge">Besplatno probno</div>
+                    <h3>Probni period</h3>
+                    <div class="price">
+                        <span class="price-amount">0 RSD</span>
+                        <span class="price-period">/ 30 dana</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Svi alati bez ograničenja</li>
+                        <li>✓ Neograničen broj pacijenata</li>
+                        <li>✓ Neograničen broj termina</li>
+                        <li>✓ Automatski SMS podsetnici</li>
+                        <li>✓ Više korisnika</li>
+                        <li>✓ Email podrška</li>
+                    </ul>
+                    <a href="#kontakt" class="btn btn-outline">Započnite besplatno</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge popular">Najpopularnije</div>
+                    <h3>Profesionalni</h3>
+                    <div class="price">
+                        <span class="price-amount">2,500 RSD</span>
+                        <span class="price-period">/ mesečno</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Svi alati bez ograničenja</li>
+                        <li>✓ Neograničen broj pacijenata</li>
+                        <li>✓ Neograničen broj termina</li>
+                        <li>✓ 200 SMS poruka mesečno</li>
+                        <li>✓ Više korisnika</li>
+                        <li>✓ Email podrška (24h)</li>
+                        <li>✓ Statistike i izveštaji</li>
+                        <li>✓ Bесplatna obuka</li>
+                    </ul>
+                    <a href="#kontakt" class="btn btn-primary">Izaberite paket</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge">Za veće ordinacije</div>
+                    <h3>Premium</h3>
+                    <div class="price">
+                        <span class="price-amount">4,500 RSD</span>
+                        <span class="price-period">/ mesečno</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Sve iz Profesionalnog paketa</li>
+                        <li>✓ 500 SMS poruka mesečno</li>
+                        <li>✓ Više ordinacija/lokacija</li>
+                        <li>✓ Prilagođeni izveštaji</li>
+                        <li>✓ API pristup</li>
+                        <li>✓ Prioritetna podrška</li>
+                        <li>✓ Besplatna obuka za tim</li>
+                    </ul>
+                    <a href="#kontakt" class="btn btn-outline">Kontaktirajte nas</a>
+                </div>
+            </div>
+            <div class="pricing-note">
+                <p>💡 Dodatni SMS paketi dostupni po potrebi (500 SMS = 500 RSD)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Često postavljana pitanja</h2>
+                <p>Sve što treba da znate o Moji Termini</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Da li je komplikovano za korišćenje?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ne! Moji Termini je dizajniran da bude jednostavan i intuitivan. Većina korisnika nauči da ga koristi za 10-15 minuta. Dodatno, nudimo besplatnu obuku za vas i vaš tim.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Šta ako nemam tehničko znanje?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nije potrebno tehničko znanje! Sistem je web-baziran i pristupate mu direktno preko internet pretraživača. Nema instalacije, nema komplikovanih podešavanja. Sve što vam treba je internet konekcija.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Da li je moj sistem bezbedan?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Da! Koristimo najsavremenije sigurnosne protokole. Svi podaci su šifrovani (HTTPS), redovno se prave backup kopije, i u skladu smo sa GDPR standardima za zaštitu podataka.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kako funkcionišu SMS podsetnici?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sistem automatski šalje SMS poruku pacijentu 24 sata pre zakazanog termina. Poruka sadrži datum, vreme, i naziv ordinacije. Vi ne morate ništa da radite - sve je automatski.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Šta je uključeno u besplatnom probnom periodu?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sve! Tokom 30 dana imate pristup svim funkcijama sistema bez ograničenja. Ne tražimo podatke o kreditnoj kartici. Ako vam se svidi, nastavite sa korišćenjem. Ako ne, jednostavno prestanete.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Mogu li da otkažem pretplatu bilo kada?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Da, u bilo kom trenutku. Nema ugovora, nema obaveza. Platite mesečno i otkažite kada želite. Pre otkazivanja, eksportujemo sve vaše podatke (pacijenti, termini) u Excel format.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Da li mogu da koristim na telefonu i tabletu?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Da! Sistem je potpuno prilagođen mobilnim uređajima. Funkcioniše na svim uređajima - računar, laptop, tablet, telefon. Pristupite bilo kada, bilo gde.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kakvu podršku dobijam?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Email podrška je dostupna svim korisnicima (odgovaramo u roku od 24h). Premium korisnici dobijaju prioritetnu podršku. Takođe nudimo video vodiče i detaljnu dokumentaciju.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Spremni da organizujete vašu ordinaciju?</h2>
+                <p>Započnite sa besplatnim probnim periodom od 30 dana. Bez kreditne kartice.</p>
+                <div class="cta-buttons">
+                    <a href="#kontakt" class="btn btn-primary btn-lg">Započnite besplatno</a>
+                    <a href="#kontakt" class="btn btn-secondary btn-lg">Zakažite demo</a>
+                </div>
+                <p class="cta-note">✓ 30 dana besplatno  ✓ Bez obaveze  ✓ Bez kreditne kartice</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Kontaktirajte nas</h2>
+                <p>Imate pitanje? Javite nam se!</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Pošaljite nam poruku</h3>
+                    <p>Odgovaramo u roku od 24 sata.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">info@mojitermini.rs</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <div class="contact-label">Telefon</div>
+                                <div class="contact-value">+381 11 123 4567</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div class="contact-label">Adresa</div>
+                                <div class="contact-value">Šabac, Srbija</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <!-- Honeypot field for spam protection (hidden) -->
+                        <input type="text" name="website" style="position: absolute; left: -9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <div class="form-group">
+                            <label for="name">Ime i prezime *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email adresa *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="clinic">Naziv ordinacije</label>
+                            <input type="text" id="clinic" name="clinic">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Poruka *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Pošalji poruku</button>
+                    </form>
+                    <div id="formSuccess" class="form-message success" style="display: none;" role="alert" aria-live="polite">
+                        ✓ Poruka uspešno poslata! Odgovorićemo vam uskoro.
+                    </div>
+                    <div id="formError" class="form-message error" style="display: none;" role="alert" aria-live="assertive">
+                        ✗ Greška prilikom slanja. Molimo pokušajte ponovo ili nas kontaktirajte direktno.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="#3B82F6"/>
+                            <path d="M16 8V24M8 16H24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        <span>Moji Termini</span>
+                    </div>
+                    <p class="footer-description">
+                        Sistem za zakazivanje termina kreiran za male ordinacije u Srbiji.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Proizvod</h4>
+                    <ul class="footer-links">
+                        <li><a href="#mogucnosti">Mogućnosti</a></li>
+                        <li><a href="#cenovnik">Cenovnik</a></li>
+                        <li><a href="#kako-funkcionise">Kako funkcioniše</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kompanija</h4>
+                    <ul class="footer-links">
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Pravno</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-link-disabled" title="Uskoro dostupno">Politika privatnosti</span></li>
+                        <li><span class="footer-link-disabled" title="Uskoro dostupno">Uslovi korišćenja</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Moji Termini. Sva prava zadržana.</p>
+                <p>Napravljeno sa ❤️ u Srbiji</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
